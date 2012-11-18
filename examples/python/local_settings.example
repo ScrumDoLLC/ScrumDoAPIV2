@@ -1,0 +1,9 @@
+scrumdo_username="your username"
+scrumdo_password="your password"
+scrumdo_host="http://beta.scrumdo.com"
+
+# Do you want to run the examples that write data?
+write_example=False
+# If so, what project?
+write_organization_slug=""
+write_project_slug=""

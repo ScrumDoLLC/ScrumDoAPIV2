@@ -67,18 +67,19 @@ API Browser
 
 You can browse all the available API calls in our interactive API Browser: http://beta.scrumdo.com/api/v2/docs
 
-![API Browser](https://raw.github.com/ScrumDoLLC/ScrumDoAPIV2/master/images/browser.png "API Browser")
-
 If you are logged into ScrumDo, you will be able to actually execute API calls against your account via that page (ie. It's for real, be careful.) to see the inputs, URL's and outputs of each command.  Click the "Try it out" button under each call.
 
 Some properties are read-only via the API.  When posting or putting data, please consult the body parameter of the API browser.  It lists all valid fields and gives examples for the format of the data expected.
+
+![API Browser](https://raw.github.com/ScrumDoLLC/ScrumDoAPIV2/master/images/browser.png "API Browser")
 
 
 Rate Throttling
 ---------------
 
-GET requests - We allow up to 25 requests per 5 seconds.
-POST or PUT requests - We allow up to 5 requests per 5 seconds.
+GET requests - We allow up to 50 requests per 5 seconds.
+
+POST or PUT requests - We allow up to 10 requests per 5 seconds.
 
 Paged Results
 -------------

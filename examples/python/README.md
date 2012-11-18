@@ -2,6 +2,28 @@ This is a simple python script capable of accessing the ScrumDo API via HTTP Bas
 
 It is released under the MIT License and is suitable as either a reference or a starting point for your applications.
 
+Usage
+=====
+
+1. Optional: First, get set up a python virtual environment
+
+    virtualenv env
+
+2. Set up the requirements
+
+    pip install -r requirements.txt
+
+3. Create a local settings file.
+
+    cp local_settings.example local_settings.py
+
+4. Edit local_settings.py to include your authentication information
+
+5. Run the script
+
+    python scrumdo_example.py
+
+
 MIT License
 ===========
 
