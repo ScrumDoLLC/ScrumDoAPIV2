@@ -39,7 +39,7 @@ https://github.com/ScrumDoLLC/ScrumDoAPIV2/tree/master/examples/django
 
 
 ## HTTP Basic
-If you're creating a script that will only be used personally or internally within your company, you may use HTTP Basic authentication with your username and password to speed development.
+If you're creating a script that will **only be used personally or internally within your company**, you may use HTTP Basic authentication with your username and password to speed development.
 
 
 REST
@@ -72,4 +72,22 @@ All calls have at least a minimal amount of documentation in the API browser.  I
 http://support.scrumdo.com/discussions/api-access
 
 Please note - We have a limited staff able to respond to API access requests, and there may occasionally be a delay in a response.
+
+Rate Throttling
+---------------
+
+GET requests - We allow up to 25 requests per 5 seconds.
+POST or PUT requests - We allow up to 5 requests per 5 seconds.
+
+Paged Results
+-------------
+
+In general, in order to make working with our API as easy as possible, we try to return all relevant data in a single call.  However, there are a few calls that may generate way too much information.  Those results will be paged.  The API Browser lists which calls will be paged in this way.
+
+
+Older versions of the API
+-------------------------
+
+Version 1 of our API should now be considered deprecated.  We will do our best to make sure it remains functional for at least the next 6 months (until 6/1/2013) but have no plans on maintaining it after that.  
+
 
