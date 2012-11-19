@@ -23,6 +23,29 @@ Usage
 
     python scrumdo_example.py
 
+Example Output
+==============
+
+	ScrumDo LLC	scrumdo
+		ScrumDo	scrumdo-web
+				Backlog None to None
+					99 Stories, 376 Points, 6 Completed tasks
+				Iteration 1 2010-11-13 to 2010-11-20
+					0 Stories, 0 Points, 0 Completed tasks
+				Iteration 2 2010-11-20 to 2010-11-28
+					0 Stories, 0 Points, 0 Completed tasks
+				Iteration 3 2010-11-27 to 2010-12-04
+					0 Stories, 0 Points, 0 Completed tasks
+				Iteration 4 2010-12-04 to 2010-12-11
+					1 Stories, 0 Points, 0 Completed tasks
+				Iteration 5 2010-12-12 to 2011-01-05
+					0 Stories, 0 Points, 0 Completed tasks
+				Iteration 6 2011-01-05 to 2011-01-14
+					0 Stories, 0 Points, 0 Completed tasks
+				Iteration 7 2011-01-15 to 2011-01-29
+					0 Stories, 0 Points, 0 Completed tasks
+
+
 
 MIT License
 ===========
