@@ -71,6 +71,7 @@ def oauth_callback(request):
 def authenticated_home(request):
     try:
         access_token = request.session.get("access_token")        
+        logger.info("Making request to %s with %s" % (("%s/api/v2/" % settings.SCRUMDO_HOSTNAME),access_token) )
         api = slumber.API("%s/api/v2/" % settings.SCRUMDO_HOSTNAME)
         organizations = api.organizations.get(access_token=access_token)
     except slumber.exceptions.HttpServerError as e:
