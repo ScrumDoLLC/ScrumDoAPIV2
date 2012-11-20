@@ -63,6 +63,7 @@ def oauth_callback(request):
     logger.info("Received %s / %s from oauth request" % (resp, content) )    
     access_token = dict(urlparse.parse_qsl(content))
     request.session['access_token'] = access_token['oauth_token']
+    logger.info("Set token to %s" % access_token['oauth_token'] )
     return HttpResponseRedirect("/")
     
 
