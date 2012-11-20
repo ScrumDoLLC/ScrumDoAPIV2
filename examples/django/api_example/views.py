@@ -64,7 +64,7 @@ def oauth_callback(request):
     access_token = dict(urlparse.parse_qsl(content))
     request.session['access_token'] = access_token['oauth_token']
     logger.info("Set token to %s" % access_token['oauth_token'] )
-    return HttpResponseRedirect("/")
+    return authenticated_home(request)
     
 
 # Now that we're authenticated, lets show the user a list of organization they are a member of.
