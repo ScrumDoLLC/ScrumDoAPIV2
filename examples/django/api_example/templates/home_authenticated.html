@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+	{% for org in organizations %}
+		<h1><a href="{% url project_list org.slug %}">{{org.name}}</a></h1>
+	{% endfor %}
+	
+{% endblock %}
