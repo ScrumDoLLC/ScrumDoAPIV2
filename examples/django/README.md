@@ -2,6 +2,33 @@ This is a simple Django application capable of accessing the ScrumDo API via Ope
 
 It is released under the MIT License and is suitable as either a reference or a starting point for your applications.
 
+
+Usage
+=====
+
+1. Optional: First, get set up a python virtual environment
+
+    virtualenv env
+
+2. Set up the requirements
+
+    pip install -r requirements.txt
+
+3. Go to http://beta.scrumdo.com/api/v2/oauth/apps and register your app.
+
+4. Set environmental variables for
+
+    CONSUMER_KEY
+    CONSUMER_SECRET    
+
+5. Run the server
+
+    python manage.py runserver
+
+
+To deploy this app anywhere but localhost:8000, you also need to modify HOSTNAME in api_example/settings.py
+
+
 MIT License
 ===========
 
