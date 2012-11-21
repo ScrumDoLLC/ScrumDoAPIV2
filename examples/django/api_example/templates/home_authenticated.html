@@ -2,11 +2,28 @@
 
 {% block content %}
 
+<div class="row">
+	<div class="span6">
+		<h1>ScrumDo API Example</h1>
+		<p>
+			This web server is running the Django based ScrumDo API example.  You can <a href="https://github.com/ScrumDoLLC/ScrumDoAPIV2">find out more</a> about the API on our <a href="https://github.com/ScrumDoLLC/ScrumDoAPIV2">Github page</a>.
+		</p>
+		<p>
+			<a href="http://www.scrumdo.com/">ScrumDo</a> is an Agile/Scrum web app to help you manage your software development projects.
+		</p>
+	</div>
+	<div class="span5 well">
+		<h1>API Calls</h1>
+		<p>
+			Now that you're back, this server has taken your one time use access token, exchanged it for a permanent token, and then contacted the ScrumDo server for a list of organizations you have access to.  Go ahead and click one of them.
+		</p>
+		{% for org in organizations %}
+			<h3><a href="{% url project_list org.slug %}">{{org.name}}</a></h3>
+		{% endfor %}
+	</div>
+</div>
 
 
 
-	{% for org in organizations %}
-		<h1><a href="{% url project_list org.slug %}">{{org.name}}</a></h1>
-	{% endfor %}
 	
 {% endblock %}

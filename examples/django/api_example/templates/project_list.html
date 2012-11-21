@@ -2,11 +2,31 @@
 
 {% block content %}
 
-<ul>
-{% for project in projects %}
-	<li>{{project.name}}</li>
-{% endfor %}
-</ul>
+	<div class="row">
+		<div class="span6">
+			<h1>ScrumDo API Example</h1>
+			<p>
+				This web server is running the Django based ScrumDo API example.  You can <a href="https://github.com/ScrumDoLLC/ScrumDoAPIV2">find out more</a> about the API on our <a href="https://github.com/ScrumDoLLC/ScrumDoAPIV2">Github page</a>.
+			</p>
+			<p>
+				<a href="http://www.scrumdo.com/">ScrumDo</a> is an Agile/Scrum web app to help you manage your software development projects.
+			</p>
+		</div>
+		<div class="span5 well">
+			<h1>API Calls</h1>
+			<p>
+				We just retrieved a list of projects that you have access to.  This is as far as this demo goes, but you can explore the API more from 
+				our <a href="http://beta.scrumdo.com/api/v2/docs">API browser</a>.
+			</p>
+			<p>
+				You could also revoke API access to this app from your <a href="http://beta.scrumdo.com/developer/user_keys">relevant acccount settings</a> page.
+			</p>
+			<ul>
+			{% for project in projects %}
+				<li>{{project.name}}</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
 
-	
 {% endblock %}
