@@ -4,7 +4,7 @@ ScrumDo API Version 2
 Beta Status
 -----------
 
-This version of the API is currently in Beta status, and is only available on the ScrumDo Beta server.  Make sure all references to URL's are to beta.scrumdo.com, and not www.scrumdo.com, no matter what this document says.  
+This version of the API is currently in Beta status, and is only available on the ScrumDo Beta server.  Make sure all references to URL's are to beta.scrumdo.com, and not http://www.scrumdo.com/ no matter what this document says.  
 
 Take Care: The beta server points to the live production database, so you'll be dealing with your live projects.
 
@@ -26,6 +26,8 @@ Users can manage the access of apps they've grated access to here: http://beta.s
 A Django based example showing how to authenticate can be found here:
 https://github.com/ScrumDoLLC/ScrumDoAPIV2/tree/master/examples/django
 
+You can see that app running here:
+http://scrumdo-api-example.herokuapp.com/
 
 ## HTTP Basic
 If you're creating a script that will **only be used personally or internally within your company**, you may use HTTP Basic authentication with your username and password to speed development.
