@@ -22,9 +22,15 @@ callback_url = "%s/oauth_callback" % settings.HOSTNAME
 
 # We'll return a homepage depending on whether or not the user is authenicated already
 def home(request):    
-    if not request.session.get("access_token",False):
-        return unauthenticated_home(request)
-    return authenticated_home(request)
+    
+    if request.session.get("access_token",False):
+        try:    
+            return authenticated_home(request)
+        except:
+            logger.warn("Could not use previous token.")
+
+    return unauthenticated_home(request)
+
 
 
 # Step 1 of the OAuth dance... 
@@ -36,7 +42,9 @@ def unauthenticated_home(request):
     consumer = oauth.Consumer(settings.CONSUMER_KEY, settings.CONSUMER_SECRET)
     client = oauth.Client(consumer)
     resp, content = client.request(request_token_url, "POST", body=urllib.urlencode({'oauth_callback':callback_url}))
+
     if resp['status'] != '200':
+        logger.error("Could not contact the scrumdo server to get our url.  Did you set up your CONSUMER_KEY/CONSUMER_SECRET ?")
         raise Exception("Invalid response %s." % resp['status'])
 
     request_token = dict(urlparse.parse_qsl(content))
