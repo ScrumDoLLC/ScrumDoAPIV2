@@ -54,13 +54,13 @@ All of our calls return results in JSON by default.  When expecting data (POST o
 What's a SLUG?
 --------------
 
-Projects and organizations are identified by a slug, a short string consisting of alpha-numeric characters or dashes.  Most other objects are identified by a numeric id.  You can find out the slug of an organization by calling the getOrganizations call: http://www.scrumdo.com/api/v2/docs#!/organizations/getOrganizations_get
+Projects and organizations are identified by a slug, a short string consisting of alpha-numeric characters or dashes.  Most other objects are identified by a numeric id.  You can find out the slug of an organization by calling the getOrganizations call: https://www.scrumdo.com/api/v2/docs#!/organizations/getOrganizations_get
 
 
 API Browser
 -----------
 
-You can browse all the available API calls in our interactive API Browser: http://www.scrumdo.com/api/v2/docs
+You can browse all the available API calls in our interactive API Browser: https://www.scrumdo.com/api/v2/docs
 
 If you are logged into ScrumDo, you will be able to actually execute API calls against your account via that page (ie. It's for real, be careful.) to see the inputs, URL's and outputs of each command.  Click the "Try it out" button under each call.
 
