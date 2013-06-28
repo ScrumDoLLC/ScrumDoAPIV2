@@ -37,7 +37,7 @@ def home(request):
 # Here, we're generating the URL we should send the user to and displaying it to the user asking them
 # to click on it.
 # When they click on it, they'll be brought to the scrumdo server and can grant access.  After which, they 
-# will be redirect back to callback_url above, which maps to oauth_callback() below
+# will be redirect back to callback_url, which maps to oauth_callback() below
 def unauthenticated_home(request):
     consumer = oauth.Consumer(settings.CONSUMER_KEY, settings.CONSUMER_SECRET)
     client = oauth.Client(consumer)
@@ -59,7 +59,7 @@ def unauthenticated_home(request):
 # Then, we'll save that permanent token in the users session so we can use it again later.
 # If you were making a normal DB backed app, you'd probably want to save it and associate 
 # it with the user at this point.
-# After that, we'll redirect the user back to the homepage, and they'll end up at authenticated_home() below
+# After that, we'll serve up authenticated_home() below
 def oauth_callback(request):    
     oauth_verifier = request.GET.get("oauth_verifier")
     token = oauth.Token(request.GET.get('oauth_token'), request.session.get('oauth_token_secret') )    
