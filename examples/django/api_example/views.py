@@ -71,17 +71,22 @@ def oauth_callback(request):
     logger.info("Received %s / %s from oauth request" % (resp, content) )    
     access_token = dict(urlparse.parse_qsl(content))
     request.session['access_token'] = access_token['oauth_token']
-    return HttpResponseRedirect("/")
+    logger.info("Set token to %s" % access_token['oauth_token'] )
+    return authenticated_home(request)
     
 
 # Now that we're authenticated, lets show the user a list of organization they are a member of.
 def authenticated_home(request):
     try:
         access_token = request.session.get("access_token")        
+        logger.info("Making request to %s with %s" % (("%s/api/v2/" % settings.SCRUMDO_HOSTNAME),access_token) )
         api = slumber.API("%s/api/v2/" % settings.SCRUMDO_HOSTNAME)
         organizations = api.organizations.get(access_token=access_token)
-    except:
+    except slumber.exceptions.HttpServerError as e:
+        print e
+        print e.content        
         return unauthenticated_home(request)
+        
 
     return render_to_response("home_authenticated.html", {'organizations': organizations}, context_instance = RequestContext(request) )
     
