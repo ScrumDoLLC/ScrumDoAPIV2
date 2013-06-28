@@ -14,7 +14,7 @@ CONSUMER_SECRET= os.environ.get("CONSUMER_SECRET", "bMLVfEDupKHffFLS6NXE5nUzd9Ey
 HOSTNAME="http://localhost:8000"
 
 # And the hostname of the ScrumDo server you want to contact
-SCRUMDO_HOSTNAME="http://beta.scrumdo.com"
+SCRUMDO_HOSTNAME="https://www.scrumdo.com"
 
 
 

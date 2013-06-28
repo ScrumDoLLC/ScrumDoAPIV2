@@ -14,7 +14,7 @@ Usage
 
     pip install -r requirements.txt
 
-3. Go to http://beta.scrumdo.com/api/v2/oauth/apps and register your app.
+3. Go to https://www.scrumdo.com/api/v2/oauth/apps and register your app.
 
 4. Set environmental variables for
 
