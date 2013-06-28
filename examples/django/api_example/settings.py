@@ -7,14 +7,14 @@ DEBUG = True
 
 # First, you need to go to http://beta.scrumdo.com/api/v2/oauth/apps register your new app, 
 # and fill in the consumer keys here.
-CONSUMER_KEY = os.environ.get("CONSUMER_KEY","RJQssf7Fj4LSv6Rjtk")
-CONSUMER_SECRET= os.environ.get("CONSUMER_SECRET", "bMLVfEDupKHffFLS6NXE5nUzd9EyWSV7")
+CONSUMER_KEY = os.environ.get("CONSUMER_KEY","")
+CONSUMER_SECRET= os.environ.get("CONSUMER_SECRET", "")
 
 # Then, set the hostname of THIS server
-HOSTNAME=os.environ.get("HOSTNAME","http://localhost:8001")
+HOSTNAME=os.environ.get("HOSTNAME","http://localhost:8000")
 
 # And the hostname of the ScrumDo server you want to contact
-SCRUMDO_HOSTNAME=os.environ.get("SCRUMDO_HOSTNAME", "http://localhost:8000")
+SCRUMDO_HOSTNAME=os.environ.get("SCRUMDO_HOSTNAME", "https://www.scrumdo.com/")
 
 
 
