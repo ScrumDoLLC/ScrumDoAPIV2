@@ -131,7 +131,7 @@ def read_epics_example(api):
 	rootEpics = [epic for epic in epics if epic['parent_id'] is None]
 
 	# Now, fill in the child relationships
-	rootEpics = [ createEpicChildren(epic, epics) for epic in epics if epic['parent_id'] is None]	
+	rootEpics = [ createEpicChildren(epic, epics) for epic in rootEpics]	
 
 	printEpics(rootEpics, 0)
 
