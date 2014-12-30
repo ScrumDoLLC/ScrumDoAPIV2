@@ -10,7 +10,8 @@ def main():
 	base_url = "%s/api/v2/" % settings.scrumdo_host
 	api = slumber.API(base_url, auth=(settings.scrumdo_username, settings.scrumdo_password))
 
-	read_examples(api)
+	# read_examples(api)
+	read_epics_example(api)
 	
 	if settings.write_example:
 		write_examples(api)
@@ -106,6 +107,33 @@ def write_examples(api):
 	except slumber.exceptions.HttpServerError as e:
 		print e
 		print e.content
+
+
+
+def createEpicChildren(targetEpic, allEpics):
+	targetEpic['children'] = [ createEpicChildren(child, allEpics) for child in allEpics if child['parent_id'] == targetEpic['id'] ]
+	return targetEpic
+
+def printEpics(epics, indent):
+	indentSpaces = " " * (indent * 3)
+	for epic in epics:
+		print "%sEpic #%d %s" % (indentSpaces, epic['number'], epic['summary'])	
+		printEpics(epic['children'], indent + 1)
+
+def read_epics_example(api):
+	# First, lets read in our epics list
+	epics = api.organizations(settings.organization_slug).projects(settings.project_slug).epics.get()
+
+	# Now, lets convert it into a nice tree format.  We'll do it in two steps to make it easier
+	# to read, but you could do it in a single.
+
+	# First, filter out the root epics
+	rootEpics = [epic for epic in epics if epic['parent_id'] is None]
+
+	# Now, fill in the child relationships
+	rootEpics = [ createEpicChildren(epic, epics) for epic in epics if epic['parent_id'] is None]	
+
+	printEpics(rootEpics, 0)
 
 
 def read_examples(api):
