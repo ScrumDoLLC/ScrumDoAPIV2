@@ -1,6 +1,10 @@
 ScrumDo API Version 2
 =====================
 
+This document describes the API for ScrumDo.  This is only for data hosted in the 'classic' / blue themed ScrumDo
+that can be accessed from https://www.scrumdo.com - For API access to 'new' ScrumDo (the orange
+themed version) please see https://github.com/ScrumDoLLC/ScrumDoAPIV3
+
 
 Authentication
 --------------
